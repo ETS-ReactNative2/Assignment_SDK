@@ -28,7 +28,7 @@ router.post("/create", (req, res) => {
                 Tags: [
                     {
                         Key: "Name",
-                        Value: "Node SDK EC2 Creation"
+                        Value: `${req.body.iname}`
                     }
                 ]
             }
@@ -40,7 +40,7 @@ router.post("/create", (req, res) => {
             console.log(err, err.stack); // an error occurred
             res.send(err)
         } else {
-            console.log(data);  
+            console.log(data);
             res.send(data)         // successful response
         }
     });
@@ -59,52 +59,54 @@ router.get('/list', (req, res) => {
             res.send(err.stack)
         } else {
             console.log("Success", JSON.stringify(data));
-            res.send(data)
+            res.send(data.Reservations);
         }
     });
 })
 
-router.get("/stop/:inst", (req, res) => {
+router.get('/state/:state/:id', (req, res) => {
     var params = {
-        InstanceIds: `${req.params.inst}`,
+        InstanceIds: [`${req.params.id}`],
         DryRun: true
     };
-    ec2.stopInstances(params, function (err, data) {
-        if (err && err.code === 'DryRunOperation') {
-            params.DryRun = false;
-            ec2.stopInstances(params, function (err, data) {
-                if (err) {
-                    console.log("Error", err);
-                } else if (data) {
-                    console.log("Success", data.StoppingInstances);
-                }
-            });
-        } else {
-            console.log("You don't have permission to stop instances");
-        }
-    });
-})
-
-router.get("/start/:inst", (req, res) => {
-    var params = {
-        InstanceIds: `${req.params.inst}`,
-        DryRun: true
-    };
-    ec2.startInstances(params, function (err, data) {
-        if (err && err.code === 'DryRunOperation') {
-            params.DryRun = false;
-            ec2.startInstances(params, function (err, data) {
-                if (err) {
-                    console.log("Error", err);
-                } else if (data) {
-                    console.log("Success", data.StartingInstances);
-                }
-            });
-        } else {
-            console.log("You don't have permission to start instances.");
-        }
-    });
-})
+    let state = `${req.params.state}`
+    if (state.toUpperCase() === "START") {
+        // Call EC2 to start the selected instances
+        ec2.startInstances(params, function (err, data) {
+            if (err && err.code === 'DryRunOperation') {
+                params.DryRun = false;
+                ec2.startInstances(params, function (err, data) {
+                    if (err) {
+                        console.log("Error", err);
+                    } else if (data) {
+                        console.log("Success", data.StartingInstances);
+                        res.send(data.StartingInstances)
+                    }
+                });
+            } else {
+                console.log("You don't have permission to start instances.");
+            }
+        });
+    } else if (state.toUpperCase() === "STOP") {
+        // Call EC2 to stop the selected instances
+        ec2.stopInstances(params, function (err, data) {
+            res.send(err);
+            if (err && err.code === 'DryRunOperation') {
+                params.DryRun = false;
+                ec2.stopInstances(params, function (err, data) {
+                    if (err) {
+                        console.log("Error", err);
+                    } else if (data) {
+                        console.log("Success", data.StoppingInstances);
+                        res.send(data.StoppingInstances)
+                    }
+                });
+            } else {
+                console.log("You don't have permission to stop instances");
+            }
+        });
+    }
+});
 
 router.delete("/terminate/:inst", (req, res) => {
     const params = {

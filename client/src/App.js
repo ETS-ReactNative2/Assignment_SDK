@@ -9,6 +9,7 @@ import ListBucket from './Components/S3/List';
 import ListObjects from './Components/S3/ListObjects';
 
 import ListInstances from './Components/Ec2/List'
+import CreateInstance from './Components/Ec2/Create'
 function App() {
     return (
         <div className="container">
@@ -21,7 +22,9 @@ function App() {
                 <Route path='/s3/list' element={<ListBucket />} />
                 <Route path='/s3/listobj/:name' element={<ListObjects />} />
 
-                <Route path='/ec2/list' element={< ListInstances />}></Route>
+                <Route path='/ec2/list' element={< ListInstances />} />
+                <Route path='/ec2/create' element={< CreateInstance />} />
+
             </Routes>
         </div>
     );

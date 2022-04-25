@@ -8,16 +8,13 @@ class EC2Service {
     getInstance() {
         return axios.get(USER_BASE_URL + "/list");
     }
-    stopInstance(id) {
-        return axios.get(USER_BASE_URL + "/stop/" + id)
+    changeStatus(state, id) {
+        return axios.get(USER_BASE_URL + '/state/' + state + '/' + id);
     }
-    stopInstance(id) {
-        return axios.get(USER_BASE_URL + "/start/" + id)
+    createInstance(data) {
+        return axios.post(USER_BASE_URL + "/create", data, { headers: headers })
     }
-    createInstance(data){
-        return axios.post(USER_BASE_URL + "/create", data, {headers:headers})
-    }
-    terminateInstance(id){
+    terminateInstance(id) {
         return axios.delete(USER_BASE_URL + "/terminate/" + id)
     }
 }
