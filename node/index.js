@@ -9,10 +9,12 @@ app.use(express.urlencoded({ extended: true })) //middleware
 app.use(helmet())
 app.use(cors())
 
-app.use("/s3", require("./routes/routes"))
+app.use("/s3", require("./routes/s3"))
+app.use("/ec2", require("./routes/ec2"))
+
 
 app.get("/", (req, res) => { // root path
-    res.send("<h1>Welcome to User CRUD</h1>")
+    res.send("<h1>Welcome to Home CRUD</h1>")
 })
 
 // app.get('/list', async(req,res)=>{
@@ -27,6 +29,6 @@ app.get("/", (req, res) => { // root path
 //     // console.log(data)
 // })
 
-app.listen(3001, () => {
+app.listen(3500, () => {
     console.log("Server Started")
 })
