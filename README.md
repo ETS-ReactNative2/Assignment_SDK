@@ -2,6 +2,12 @@
 
 This is an Assignment on AWS SDK (Software Development Kit). We will be using to to access various AWS services from our own designed APIs.
 
+## Access Link (until instance terminates)
+
+http://54.242.142.78:3000/
+
+*(please access through mozilla firefox)*
+
 ## Tech Stack
 * Backend: Nodejs
 * Frontend: ReactJs
@@ -29,6 +35,7 @@ Visit this link: https://docs.docker.com/engine/install/ubuntu/
   * AWS_SECRET_ACCESS_KEY --> secret access key generated
   * AWS_DEFAULT_REGION --> the default region you want your services to be at
   * dakshinnovaccer/assignment_sdk:8.0 00> name of the image
+  
   
 ## Necessary Installations
 * Node
