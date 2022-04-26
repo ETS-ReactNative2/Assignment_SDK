@@ -10,5 +10,4 @@ COPY . .
 
 EXPOSE 3000
 
-# CMD ["pm2","start", "index.js", "--watch"]
 CMD [ "npm","start" ]
