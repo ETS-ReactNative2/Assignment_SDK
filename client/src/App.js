@@ -15,7 +15,7 @@ function App() {
         <div className="container">
             <Header />
             <br />
-            <center><h1>Welcome to S3 Handler</h1></center>
+            <center><h1>Welcome to S3 and EC2 Handler</h1></center>
             <Routes>
 
                 <Route path='/s3/create' element={<CreateBucket />} />

@@ -13,7 +13,7 @@ const CreateBucket = () => {
         };
         bucketservice.createBucket(bucket).then((res) => {
             if (res.status === 200) {
-                navigate("/list");
+                navigate("/s3/list");
             }
 
         });

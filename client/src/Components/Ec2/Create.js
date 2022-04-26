@@ -18,7 +18,7 @@ const CreateInstance = () => {
         };
         console.log(data);
         instanceservice.createInstance(data).then(res => {
-            navigate('/ec2/listinstance');
+            navigate('/ec2/list');
         }).catch(err => {
             console.log(err);
         })
@@ -27,7 +27,7 @@ const CreateInstance = () => {
         <div className='bucketlist'>
             <h3>Create a new instance</h3>
             <form onSubmit={submitHandler}>
-                
+
                 {/* <div className="form-group">
                     <label htmlFor="name">Group Name</label>
                     <input

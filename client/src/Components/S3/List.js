@@ -12,7 +12,7 @@ const ListBucket = () => {
 
     const deleteBucket = (name) => {
         bucketservice.deleteBucket(name).then(res => {
-            navigate('/list')
+            navigate('/s3/list')
         }).catch(err => {
             alert(err.message);
             console.log(err);
@@ -52,7 +52,7 @@ const ListBucket = () => {
                             <td>{bucket.Name}</td>
                             <td>{bucket.CreationDate}</td>
                             <td>
-                                <Link to={`/listobj/${bucket.Name}`} className="btn btn-warning m-1">List Files</Link>
+                                <Link to={`/s3/listobj/${bucket.Name}`} className="btn btn-warning m-1">List Files</Link>
                                 {/* <button type="button" className="btn btn-danger" onClick={() => listfiles(bucket.Name)}>Delete</button> */}
                                 {/* <Link to={`/upload/${bucket.Name}`} className="btn btn-warning m-1">Upload Files</Link> */}
                                 <button type="button" className="btn btn-danger" onClick={() => deleteBucket(bucket.Name)}>Delete**</button>
@@ -62,7 +62,7 @@ const ListBucket = () => {
                 </tbody>
             </table>
             <div>
-                <center><Link to='/create' className="btn btn-primary">Create New Bucket</Link>
+                <center><Link to='/s3/create' className="btn btn-primary">Create New Bucket</Link>
                     <br /><br /> **(After clicking on delete please reload the page to show the changes) </center>
             </div>
 

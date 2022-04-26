@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const USER_BASE_URL = 'http://localhost:3500/s3'
+const USER_BASE_URL = 'http://54.242.142.78:3500/s3'
 
 const headers = {
     'Content-Type': 'application/json'

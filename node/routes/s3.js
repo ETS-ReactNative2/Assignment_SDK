@@ -71,7 +71,7 @@ router.delete('/delete/:name', (req, res) => {
 });
 
 
-router.post("/upload", (req, res, next) => {
+router.post("/upload", (req, res) => {
     var uploadParams = {
         Bucket: `${req.body.name}`,
         file: `${req.body.file}`,
