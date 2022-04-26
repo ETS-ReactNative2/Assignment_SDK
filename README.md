@@ -17,7 +17,8 @@ Visit this link: https://docs.docker.com/engine/install/ubuntu/
 ## Image Link (check for updates regularly)
 * Run the Following Command
   ```bash
-  docker pull dakshinnovaccer/assignment_sdk:8.0
+  docker pull dakshinnovaccer/assignment_sdk:10.0
+  docker pull dakshinnovaccer/react_sdk:1.0
   ```
 * To run the container of the Node application
   ```bash
