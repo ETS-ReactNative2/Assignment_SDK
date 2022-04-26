@@ -162,7 +162,39 @@ In S3, the follwoing services are implemented
   Method: delete
  
 ## Screeshots of the Working App
+* Homepage
 
+![alt_text](https://github.com/daksh-innovaccer/Assignment_SDK/blob/master/Images/Home%20Page.png)
+
+* S3 Buckets Listed
+
+![S3_buckets](https://github.com/daksh-innovaccer/Assignment_SDK/blob/master/Images/s3bucket_listing.png)
+
+* S3 Bucket Creation
+
+![bucket_creation](https://github.com/daksh-innovaccer/Assignment_SDK/blob/master/Images/creating_new_bucket.png)
+
+* S3 Bucket Created
+
+![Bucket Created](https://github.com/daksh-innovaccer/Assignment_SDK/blob/master/Images/new_bucket_created.png)
+
+* Instance Listing
+
+![instance_listing](https://github.com/daksh-innovaccer/Assignment_SDK/blob/master/Images/ec2instances_listing.png)
+
+* Instance Creation
+
+*AMI id is the id of the Amazon Machine Image used for creation of this instance, here it is of Ubuntu.*
+
+![Instance_creation](https://github.com/daksh-innovaccer/Assignment_SDK/blob/master/Images/new_instance_creation.png)
+
+* Instance Getting Created
+
+![instance_pending](https://github.com/daksh-innovaccer/Assignment_SDK/blob/master/Images/instance_getting_created.png)
+
+* Stopping Instance (after it gets created)
+
+![Instance Stopping](https://github.com/daksh-innovaccer/Assignment_SDK/blob/master/Images/stopped_instance.png)
 
  ## Notes about the project
  * Please Open the EC2 Link through Mozilla firefox, don't use Google Chrome
