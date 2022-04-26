@@ -161,14 +161,19 @@ In S3, the follwoing services are implemented
   ```
   Method: delete
  
+## Screeshots of the Working App
+
 
  ## Notes about the project
- Due to some problem in AWS lab, frontend part of the project couldn't be checked fully (ec2 is pending). But, the most accurate code to my knowledge is
- uploaded here, and will do the changes once gets the access again
- Backend Functionalities are working fine
- EC2 link posted will not work as the lab is CleanedUp
+ * Please Open the EC2 Link through Mozilla firefox, don't use Google Chrome
+ * Also please don't stop the instance with id : i-020ab79480108ffc3, the app will crash if the instance is stopped. You can stop/start/terminate other instances
+* EC2 link will work until the lab closes
+* If the link not works, see the readme file for the screenshots
+* localhost will work always
+* Please read README file in the github
+* If wants to run from localhost, change the USER_BASE_URL in services files in client folder from <ip of ec2>:3500 to localhost:3500
  
- ## Furhter Improvements
+ ## Further Improvements
  * Implementing the Download functionality in S3
  * Implementing Upload files from frontend
  * Check other services of AWS too.
