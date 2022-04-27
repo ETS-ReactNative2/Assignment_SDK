@@ -28,7 +28,7 @@ Visit this link: https://docs.docker.com/engine/install/ubuntu/
   ```
 * To run the container of the Node application
   ```bash
-  sudo docker run --name new_cont -p 3500:3500 -e AWS_ACCESS_KEY_ID=##### -e AWS_SECRET_ACCESS_KEY=#### -e AWS_DEFAULT_REGION=#### dakshinnovaccer/assignment_sdk:8.0
+  sudo docker run --name new_cont -p 3500:3500 -e AWS_ACCESS_KEY_ID=##### -e AWS_SECRET_ACCESS_KEY=#### -e AWS_DEFAULT_REGION=#### dakshinnovaccer/assignment_sdk:12.0
   ```
   * new_cont --> name of the container
   * AWS_ACCESS_KEY_ID --> the access key generated from the user
@@ -36,7 +36,13 @@ Visit this link: https://docs.docker.com/engine/install/ubuntu/
   * AWS_DEFAULT_REGION --> the default region you want your services to be at
   * dakshinnovaccer/assignment_sdk:8.0 00> name of the image
   
-  
+ * To run the container of React app
+  ```bash
+  sudo docker run --name react_container -p 3000:3000 dakshinnovaccer/react_sdk:4.0
+  ```
+ 
+ Please run both the containers in order to access the application
+ 
 ## Necessary Installations
 * Node
   ```bash
